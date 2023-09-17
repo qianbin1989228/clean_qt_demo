@@ -33,10 +33,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 # 添加fastdeploy库
-#INCLUDEPATH  +=  D:\compiled_fastdeploy\include
-#INCLUDEPATH  +=  D:\compiled_fastdeploy\third_libs\install\opencv\build\include
-#LIBS += -LD:\compiled_fastdeploy\lib\ -lfastdeploy
-#LIBS += -LD:\toolplace\opencv3.4.16\opencv\build\x64\vc15\lib\ -lopencv_world3416
+#INCLUDEPATH  +=  C:\toolplace\fastdeploy_cpu\include
+#INCLUDEPATH  +=  C:\toolplace\fastdeploy_cpu\third_libs\install\opencv\build\include
+
+#LIBS += -LC:\toolplace\fastdeploy_cpu\lib\ -lfastdeploy
+#LIBS += -LC:\toolplace\fastdeploy_cpu\third_libs\install\opencv\build\x64\vc15\lib\ -lopencv_world3416
 
 RESOURCES += \
     res/logo.qrc
