@@ -63,9 +63,7 @@ void MainWindow::InitWindows()
     QAction * act_detection = new QAction(QIcon(":/icon_det.png"),QString::fromLocal8Bit("制作"),this);
     menu_detection->addAction(act_detection);
 
-    QAction * act_folder = new QAction(QIcon(":/icon_folder.png"),QString::fromLocal8Bit("保存路径设置"),this);
     QAction * act_save = new QAction(QIcon(":/icon_save.png"),QString::fromLocal8Bit("保存图像"),this);
-    menu_file->addAction(act_folder);
     menu_file->addAction(act_save);
 
     //工具栏
@@ -76,7 +74,6 @@ void MainWindow::InitWindows()
     toolBar->addSeparator();
     toolBar->addAction(act_detection);
     toolBar->addSeparator();
-    toolBar->addAction(act_folder);
     toolBar->addAction(act_save);
     toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     addToolBar(toolBar);
@@ -85,7 +82,6 @@ void MainWindow::InitWindows()
     connect(act_open_img,SIGNAL(triggered()),this,SLOT(OpenImg()));
     connect(act_detection,SIGNAL(triggered()),this,SLOT(Process()));
     connect(act_save,SIGNAL(triggered()),this,SLOT(SaveImgs()));
-    connect(act_folder,SIGNAL(triggered()),this,SLOT(ChangeSaveFolder()));
 
     // 图像面板
     dock_Image = new QDockWidget(QString::fromLocal8Bit(""), this);
@@ -138,18 +134,6 @@ void MainWindow::InitWindows()
     ui->statusbar->addPermanentWidget(m_pStatusCompany);
     m_pStatusImgSize->setText(QString::fromLocal8Bit("《深度学习与图像处理PaddlePaddle》"));
     m_pStatusCompany->setText(QString::fromLocal8Bit("版本：V1.0"));
-}
-
-/*************************************************
-修改保存目录
-*************************************************/
-void MainWindow::ChangeSaveFolder()
-{
-    QString dir = QFileDialog::getExistingDirectory(this, QString::fromLocal8Bit("修改图像存储目录"), m_saveFolder, QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
-    if(dir=="" || dir.isNull() ||dir.isEmpty())
-        return;
-    m_saveFolder = dir;
-    QMessageBox::information(this,QString::fromLocal8Bit("修改成功"),QString::fromLocal8Bit("当前图片存储目录为：")+m_saveFolder+"/Images");
 }
 
 /*************************************************

@@ -35,7 +35,6 @@ private slots:
     void OpenImg();//打开图像
     void Process();//制作照片
     void SaveImgs();//保存图像
-    void ChangeSaveFolder();//修改保存目录
 
 private:
     Ui::MainWindow *ui;
@@ -53,13 +52,9 @@ private:
     //菜单栏
     QMenu *menu_capture;//选择照片
     QMenu *menu_detection;// 制作
-    QMenu *menu_turn;// 参数调整
     QMenu *menu_file;// 保存图像
 
     //工具栏
     QComboBox*combo;
-
-    //结果输出列表
-    QTableWidget *driveResTable;
 };
 #endif // MAINWINDOW_H

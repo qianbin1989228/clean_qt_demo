@@ -3,22 +3,9 @@
         <file>logo/logo.ico</file>
         <file>style.qss</file>
         <file>Close.png</file>
-        <file>print.png</file>
         <file>logo.ico</file>
-        <file>icon1.png</file>
-        <file>icon2.png</file>
-        <file>icon3.png</file>
-        <file>icon4.png</file>
         <file>icon_det.png</file>
         <file>icon_save.png</file>
-        <file>icon_rotate.png</file>
-        <file>icon_flag.png</file>
-        <file>icon_folder.png</file>
-        <file>icon_light.png</file>
-        <file>icon_contrast.png</file>
-        <file>icon_back.png</file>
-        <file>icon_capture.png</file>
         <file>icon_openfile.png</file>
-        <file>icon_crop.png</file>
     </qresource>
 </RCC>
