@@ -141,7 +141,7 @@ void MainWindow::InitWindows()
 *************************************************/
 void MainWindow::ShowOrgImg()
 {
-    QImage showimg = m_imgorg;
+    QImage showimg = m_imgorg.copy();
     double ImgRatio = showimg.width()*1.0 / showimg.height();     // 图像宽高比
     double WinRatio = 1.0 * (scrollArea->width() - 2) / (scrollArea->height() - 2); // 窗口宽高比
     if (ImgRatio > WinRatio)        // 图像宽高比大于图像宽高比
@@ -161,7 +161,7 @@ void MainWindow::ShowOrgImg()
 *************************************************/
 void MainWindow::ShowImg()
 {
-    QImage showimg = m_img;
+    QImage showimg = m_img.copy();
     double ImgRatio = showimg.width()*1.0 / showimg.height();     // 图像宽高比
     double WinRatio = 1.0 * (scrollOutArea->width() - 2) / (scrollOutArea->height() - 2); // 窗口宽高比
     if (ImgRatio > WinRatio)        // 图像宽高比大于图像宽高比
@@ -190,8 +190,9 @@ void MainWindow::OpenImg()
         QMessageBox::warning(this,QString::fromLocal8Bit("错误"),QString::fromLocal8Bit("图像打开失败"));
         return;
     }
-    m_imgorg = img;
-    m_img = QImage();//清除上一张制作好的照片内容
+    m_imgorg = QImage();//清除上一张制作好的照片内容
+    m_imgorg = img.copy();
+    m_img = QImage();
     ShowOrgImg();
 }
 
